@@ -11,7 +11,9 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
+      header: './src/js/header.js',  //! Not sure I need this
+      editor: './src/js/editor.js' //! Not sure I need this
     },
     output: {
       filename: '[name].bundle.js',
@@ -20,7 +22,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Cake', //! change
+        title: 'J.A.T.E.', 
       }),
 
       // Inject custom service worker
@@ -32,9 +34,9 @@ module.exports = () => {
       // Create manifest.json
       new GenerateSW(),
       new WebpackPwaManifest({
-        name: 'Cake', 
-        short_name: 'Cake',
-        description: 'Keep track of important cake!',
+        name: 'Just Another Text Editor', 
+        short_name: 'J.A.T.E.',
+        description: 'Takes notes with JavaScript syntax highlighting!',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
         start_url: './',
@@ -47,7 +49,6 @@ module.exports = () => {
           },
         ],
       }),
-
     ],
 
     module: {
