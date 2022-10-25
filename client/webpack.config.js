@@ -4,8 +4,7 @@ const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
+// DONE: Add and configure workbox plugins for a service worker and manifest file. Add CSS loaders and babel to webpack.
 
 module.exports = () => {
   return {
@@ -21,7 +20,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'TODOs List',
+        title: 'Cake', //! change
       }),
 
       // Inject custom service worker
@@ -33,9 +32,9 @@ module.exports = () => {
       // Create manifest.json
       new GenerateSW(),
       new WebpackPwaManifest({
-        name: 'TODOs',
-        short_name: 'TODOs',
-        description: 'Keep track of important tasks!',
+        name: 'Cake', 
+        short_name: 'Cake',
+        description: 'Keep track of important cake!',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
         start_url: './',
